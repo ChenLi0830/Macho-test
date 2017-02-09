@@ -2,11 +2,11 @@
 
 @header: header0;
 .@{header} {
-  height: 64px;
+  height: 120px;
   background: @template-nav-bg-color;
   width: 100%;
   z-index: 970;
-  box-shadow: 0 5px 8px fade(#000, 15);
+  //box-shadow: 0 5px 8px fade(#000, 15);
   position: relative;
   top: 0;
   &-logo {
@@ -14,8 +14,14 @@
     position: absolute;
     left: 4%;
     width: 150px;
-    line-height: 64px;
+    line-height: 120px;
     & img {
+      vertical-align: middle;
+      display: inline-block;
+    }
+    & h1 {
+      letter-spacing: 3px;
+      font-size: 30px;
       vertical-align: middle;
       display: inline-block;
     }
@@ -23,10 +29,15 @@
       display: block;
     }
   }
+  &-toggle{
+    font-size: 30px;
+    cursor: pointer;
+    vertical-align: middle;
+  }
   &-nav {
     float: right;
-    margin-right: 4%;
-    line-height: 64px;
+    margin-right: 10%;
+    line-height: 120px;
     position: relative;
     & .ant-menu-horizontal {
       border-bottom-color: transparent;
@@ -34,16 +45,32 @@
     & .ant-menu {
       background: transparent;
       color: @template-text-color-light;
-      line-height: 62px;
+      line-height: 118px;
       & li {
-        float: left;
-        text-align: center;
-        width: 100px;
+        //float: left;
+        //text-align: center;
+        //width: 100px;
+        color: #616265;
+        letter-spacing: 1.5px;
       }
     }
     & .ant-menu-horizontal > .ant-menu-item-active {
       color: @link-hover-color;
       border-bottom-color: @link-hover-color;
+    }
+    & .ant-menu-horizontal > .ant-menu-item-selected {
+      color: @link-hover-color;
+      border-bottom-color: @link-hover-color;
+    }
+    & .ant-menu-horizontal > .contact-btn{
+      border: 1px solid #f08683;
+      border-radius: 35px;
+      margin-top: 36px;
+      margin-left: 30px;
+
+      text-align: center;
+      line-height: 40px;
+      width: 120px;
     }
   }
 }
