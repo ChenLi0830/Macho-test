@@ -3,6 +3,7 @@ import TweenOne from 'rc-tween-one';
 import {Menu, Row, Col, Icon} from 'antd';
 import {connect} from 'react-redux';
 import {navActions} from '../../modules';
+import {Link} from 'rc-scroll-anim';
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
@@ -13,14 +14,22 @@ const Header = (props) => {
   
   let navData = {menu1: 'PRODUCT', menu2: 'WORKS', menu3: 'TEAM', menu4: 'ABOUT'};
   const navChildren = Object.keys(navData)
-      .map((key, i) => (<Item style={{borderWidth: 0}} key={i}>{navData[key]}</Item>));
+      .map((key, i) => (<Item style={{borderWidth: 0}} key={i}>
+        <Link key={i} to={`Content${i + 1}`} toHash={false}>
+          {navData[key]}
+        </Link>
+      </Item>));
   navChildren.push(<Item key={4} className={"contact-btn"}>{'CONTACT'}</Item>);
   
-  navData = {...navData, menu5: "CONTACT"};
   const dropDownChildren = Object.keys(navData).map((key, i) => (
-          <Item key={i}>{navData[key]}</Item>
+          <Item key={i}>
+            <Link key={i} to={`Content${i + 1}`} toHash={false}>
+              {navData[key]}
+            </Link>
+          </Item>
       )
   );
+  dropDownChildren.push(<Item key={4}>{'CONTACT'}</Item>);
   
   return (<Row>
     <TweenOne
