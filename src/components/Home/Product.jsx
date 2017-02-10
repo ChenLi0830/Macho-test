@@ -4,10 +4,10 @@ import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 import {Col} from 'antd';
 
-const Content = (props) => {
+const Product = (props) => {
   return (
       <div
-          {...props}
+          id={props.id}
           className="content-template-wrapper2"
       >
         <OverPack
@@ -40,7 +40,7 @@ const Content = (props) => {
               probablemente estás confundido, porque no sabes cómo hacer lo que estás
               aprendiendo. </p>
             
-            <div key="btn" className="content2-div">
+            <div key="btn" className="content2-div" onClick={() => props.downLoadClicked()}>
               <Col xs={24} sm={{span:16}} md={{span:12}} lg={{span:10}}>
               <div className="capitalize content2-btn">
                 download the app
@@ -61,14 +61,21 @@ const Content = (props) => {
       </div> );
 };
 
-
-Content.propTypes = {
+Product.propTypes = {
   id: React.PropTypes.string,
   className: React.PropTypes.string,
 };
 
-Content.defaultProps = {
+Product.defaultProps = {
   className: 'content1',
 };
 
-export default Content;
+import {connect} from 'react-redux';
+import {productActions} from '../../modules';
+const mapDispatchToProps = (dispatch) => {
+  return {
+    downLoadClicked: () => dispatch(productActions.downloadClicked()),
+  }
+};
+
+export default connect(null, mapDispatchToProps)(Product);
