@@ -24,8 +24,10 @@ const initialState = {
 const reducer = (state=initialState, action) => {
   switch(action.type){
     case "WORK_IMAGE_MOUSE_ENTER":
+      console.log(`Redux reducer: Image ${action.payload} is hovered`);
       return {hovered: action.payload};
     case "WORK_IMAGE_MOUSE_LEAVE":
+      console.log(`Redux reducer: Image is un-hovered`);
       return initialState;
     default: return state;
   }

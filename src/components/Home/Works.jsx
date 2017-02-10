@@ -1,34 +1,72 @@
 import React from 'react';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
-import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
-import {Col} from 'antd';
+import {Col, Row} from 'antd';
 
 const Works = (props) => {
+  let works = [],
+      numbers = ["one", "two", "three", "four", "five", "six"];
+  
+  for (let i = 0; i < 6; i++) {
+    works[i] = {
+      image: `https://s3-us-west-2.amazonaws.com/macho.test/images/${i+1}.png`,
+      number: numbers[i],
+    }
+  }
+  
+  const children = works.map((work, i) =>
+      <Col xs={24} sm={12} md={8}
+           className="image-container" key={i}
+           onMouseEnter={()=>{props.onHover(i)}}
+           onMouseLeave={()=>{props.onLeave()}}
+      >
+          <img src={work.image}/>
+          <div className="after">
+            <div className="title capitalize">
+              {`Project ${work.number}`}
+            </div>
+            <div className="content">
+              <p>
+                Esto es algo de contenido. Puede ser largo y abarcar varias líneas.
+                Esto es algo de contenido. Puede ser largo y abarcar varias líneas.
+              </p>
+            </div>
+          </div>
+      </Col>
+  );
   
   return (
       <div
-          {...props}
+          id={props.id}
           className="content-template-wrapper"
       >
         <OverPack
-            className={`content-template`}
-            hideProps={{ h1: { reverse: true }, p: { reverse: true } }}
+            className={`content-template content2`}
+            hideProps={{h1: {reverse: true}, p: {reverse: true}}}
             location={props.id}
+            style={{maxWidth: "none"}}
         >
           <TweenOne
               key="h1"
-              animation={{ y: '+=30', opacity: 0, type: 'from' }}
+              animation={{y: '+=30', opacity: 0, type: 'from'}}
               component="div"
           >
-            <Col xs={{span: 8, offset: 8}}>
-              Our Works
-            </Col>
-            
-            <Col xs={{span: 8}}>
-              52 works in total
-            </Col>
+            <Row className="titleRow">
+              <Col xs={{span: 24}} sm={{span: 8, offset: 8}} style={{fontSize: 38}}>
+                <p>
+                  Our Works
+                </p>
+              </Col>
               
+              <Col xs={{span: 0}} sm={{span: 8}} style={{fontSize: 14}}>
+                <p>
+                  52 works in total
+                </p>
+              </Col>
+            </Row>
+  
+            {children}
+            
           </TweenOne>
         
         </OverPack>
@@ -41,8 +79,24 @@ Works.propTypes = {
   className: React.PropTypes.string,
 };
 
-// Works.defaultProps = {
-//   className: 'content2',
-// };
+Works.defaultProps = {
+  className: 'content2',
+};
 
-export default Works;
+import {connect} from 'react-redux';
+import {workActions} from '../../modules';
+
+const mapStateToProps = (state) => {
+  return {
+    hoveredWork: state.work.hovered,
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onHover: (number) => dispatch(workActions.imageHovered(number)),
+    onLeave: () => dispatch(workActions.imageUnhovered()),
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Works);
