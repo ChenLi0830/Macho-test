@@ -7,7 +7,8 @@ import {createStore, applyMiddleware} from 'redux';
 const store = createStore(reducer, applyMiddleware(thunk));
 export default store;
 
-// import * as initialConfigModalActions from "./initialConfigModal";
-// export {initialConfigModalActions};
+import * as navActions from './nav';
+import * as productActions from './product';
+export {navActions, productActions};
 
 
