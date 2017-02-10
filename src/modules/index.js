@@ -9,6 +9,7 @@ export default store;
 
 import * as navActions from './nav';
 import * as productActions from './product';
-export {navActions, productActions};
+import * as workActions from './work';
+export {navActions, productActions, workActions};
 
 
