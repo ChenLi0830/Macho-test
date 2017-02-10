@@ -5,7 +5,8 @@
 .@{content1} {
   &-img {
     height: 100%;
-    //width: 40%;
+    @media (max-width: 768px) { width: 100%; }
+    @media (min-width: 768px) { width: 40%; }
     overflow: hidden;
     display: inline-block;
     position: relative;
@@ -13,8 +14,8 @@
     span{
       display: inline-block;
       position: absolute;
-      width: 55%;
-      left: 10%;
+      //width: 55%;
+      //left: 10%;
       img {
         vertical-align: middle;
       }
@@ -22,30 +23,78 @@
   }
   &-text {
     display: inline-block;
-    //width: 55%;
+    @media (max-width: 768px) { width: 100%; }
+    @media (min-width: 768px) { width: 55%; }
+
     height: 100%;
-    vertical-align: middle;
+    vertical-align: top;
     position: relative;
     //margin-right: 5%;
+    & .content2-btn{
+      float:none;
+      height: 50px;
+      background-color: #eb6662;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 50px;
+      color: white;
+      border-radius: 35px;
+    }
+
+    & .content2-div{
+      position: relative !important;
+      @media (max-width: 768px) { margin-right: 10% }
+      //@media (min-width: 768px) {  }
+      width: 75%;
+      float: right;
+    }
+
     & p, & h1 {
       position: relative !important;
+      @media (max-width: 768px) { margin-right: 10% }
+      //@media (min-width: 768px) {  }
       width: 75%;
       float: right;
     }
     & h1 {
-      top: 35%;
-      font-size: 32px;
-      font-weight: normal;
+      //top: 35% !important;
+      font-size: 36px !important;
+      font-weight: 300 !important;
       color: #404040;
+      margin-bottom: 40px;
     }
     & p {
-      top: 37%;
+      //top: 37%;
+      color: #BDBDBD;
+      margin-bottom: 30px;
+      font-size: 13px;
     }
   }
 }
 
-.content-half-wrapper2{
-  padding-top:10vh;
-  height: 60vh;
-  // min-height: 342px;
+.content-template-wrapper2 {
+  width: 100%;
+  background: #fff;
+  padding-top: 15%;
+  height: 100vh;
+  border-color: #666;
+  // min-height: 685px;
+  // align-items: center;
+  // display: flex;
+  & .content1 {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    & h1 {
+      font-size: 32px;
+      font-weight: normal;
+      color: #404040;
+    }
+    & > p {
+      font-size: 12px;
+      margin: 20px auto;
+    }
+  }
 }
