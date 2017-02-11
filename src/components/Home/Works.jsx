@@ -48,17 +48,17 @@ const Works = (props) => {
         >
           <TweenOne
               key="h1"
-              animation={{y: '+=30', opacity: 0, type: 'from'}}
+              animation={{opacity: 0, type: 'from'}}
               component="div"
           >
             <Row className="titleRow">
-              <Col xs={{span: 24}} sm={{span: 8, offset: 8}} style={{fontSize: 38}}>
+              <Col xs={{span: 24}} sm={{span: 8, offset: 8}} style={{fontSize: 42, color: "#333"}}>
                 <p>
                   Our Works
                 </p>
               </Col>
               
-              <Col xs={{span: 0}} sm={{span: 8}} style={{fontSize: 14}}>
+              <Col xs={{span: 0}} sm={{span: 8}} style={{fontSize: 16}}>
                 <p>
                   52 works in total
                 </p>
