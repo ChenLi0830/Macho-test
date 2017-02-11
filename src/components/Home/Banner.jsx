@@ -97,11 +97,13 @@ class Banner extends React.Component {
             </BannerAnim>
             <TweenOne
                 animation={{y: '-=20', yoyo: true, repeat: -1, duration: 1000}}
-                className={`banner1-icon`}
+                className={`banner1-icon pointer`}
                 style={{bottom: 40}}
                 key="icon"
             >
-              <Icon type="down"/>
+              <Link key="link" to="Content1" toHash={false}>
+                <Icon type="down"/>
+              </Link>
             </TweenOne>
           </OverPack>
         </TweenOne>
