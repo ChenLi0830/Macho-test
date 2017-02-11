@@ -2,7 +2,7 @@
 
 @header: header0;
 .@{header} {
-  height: 120px;
+  height: 138px;
   background: @template-nav-bg-color;
   width: 100%;
   z-index: 970;
@@ -12,9 +12,9 @@
   &-logo {
     display: inline-block;
     position: absolute;
-    left: 4%;
+    left: 8%;
     width: 150px;
-    line-height: 120px;
+    line-height: 138px;
     & img {
       vertical-align: middle;
       display: inline-block;
@@ -43,10 +43,14 @@
     & .ant-menu-horizontal {
       border-bottom-color: transparent;
     }
+    & .ant-menu-item{
+      padding: 0 40px;
+      font-weight: 200;
+    }
     & .ant-menu {
       background: transparent;
       color: @template-text-color-light;
-      line-height: 118px;
+      line-height: 138px;
       & li {
         //float: left;
         //text-align: center;
@@ -67,9 +71,9 @@
     & .ant-menu-horizontal > .contact-btn{
       border: 1px solid #f08683;
       border-radius: 35px;
-      margin-top: 36px;
+      margin-top: 46px;
       margin-left: 30px;
-
+      padding: 0 20px;
       text-align: center;
       line-height: 40px;
       width: 120px;
