@@ -32,7 +32,9 @@
     height: 200%;
     position: absolute;
     top: 0;
-    left: -500px;
+    @media (max-width: 768px) { left: -200px; }
+    @media (min-width: 768px) { left: -500px; }
+
     overflow: hidden;
   }
   .banner-user-elem .banner-user-title{
