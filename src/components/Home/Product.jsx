@@ -41,7 +41,7 @@ const Product = (props) => {
               aprendiendo. </p>
             
             <div key="btn" className="content2-div" onClick={() => props.downLoadClicked()}>
-              <Col xs={24} sm={{span:16}} md={{span:12}} lg={{span:10}}>
+              <Col xs={24} sm={{span:16}} md={{span:14}} lg={{span:12}}>
               <div className="capitalize content2-btn">
                 download the app
               </div>
@@ -52,10 +52,8 @@ const Product = (props) => {
           <TweenOne key="img"
                     animation={{x: '+=30', opacity: 0, type: 'from'}}
                     className={`content1-img`}>
-          <span>
             <img width="100%"
                  src="https://s3-us-west-2.amazonaws.com/macho.test/images/iPhone_6.png"/>
-          </span>
           </TweenOne>
         </OverPack>
       </div> );
