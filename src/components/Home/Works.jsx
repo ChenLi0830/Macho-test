@@ -45,6 +45,7 @@ const Works = (props) => {
             hideProps={{h1: {reverse: true}, p: {reverse: true}}}
             location={props.id}
             style={{maxWidth: "none"}}
+            playScale={0.2}
         >
           <TweenOne
               key="h1"

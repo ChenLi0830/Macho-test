@@ -22,9 +22,8 @@ const Footer = (props) => {
   
   return (
       <OverPack
-          id={props.id}
-          className="footer1"
-          playScale={0.2}
+          {...props}
+          playScale={0}
           hideProps={{copyright: {reverse: true}}}>
         <Row>
           <Col xs={{span: 24, offset: 1}} sm={{span: 20, offset: 2}} className="logo">

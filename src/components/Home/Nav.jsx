@@ -19,9 +19,7 @@ const Nav = (props) => {
   
   const dropDownChildren = Object.keys(navData).map((key, i) => (
           <Item key={i}>
-            <Link key={i} to={`Content${i + 1}`} toHash={false}>
-              {navData[key]}
-            </Link>
+            {navData[key]}
           </Item>
       )
   );
