@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
@@ -60,8 +60,9 @@ const Product = (props) => {
 };
 
 Product.propTypes = {
-  id: React.PropTypes.string,
-  className: React.PropTypes.string,
+  id: PropTypes.string,
+  className: PropTypes.string,
+  downLoadClicked: PropTypes.func,
 };
 
 Product.defaultProps = {

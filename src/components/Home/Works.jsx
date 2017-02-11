@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import TweenOne from 'rc-tween-one';
 import {Col, Row} from 'antd';
@@ -75,8 +75,11 @@ const Works = (props) => {
 };
 
 Works.propTypes = {
-  id: React.PropTypes.string,
-  className: React.PropTypes.string,
+  id: PropTypes.string,
+  className: PropTypes.string,
+  hoveredWork: PropTypes.number,
+  onHover: PropTypes.func,
+  onLeave: PropTypes.func,
 };
 
 Works.defaultProps = {

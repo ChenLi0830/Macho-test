@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import TweenOne from 'rc-tween-one';
 import {Col, Row} from 'antd';
@@ -81,8 +81,8 @@ const Team = (props) => {
 };
 
 Team.propTypes = {
-  id: React.PropTypes.string,
-  className: React.PropTypes.string,
+  id: PropTypes.string,
+  className: PropTypes.string,
 };
 
 Team.defaultProps = {

@@ -4,12 +4,10 @@ import {Menu, Row, Col, Icon} from 'antd';
 import {connect} from 'react-redux';
 import {navActions} from '../../modules';
 import {Link} from 'rc-scroll-anim';
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
 
 const Item = Menu.Item;
 
-const Header = (props) => {
+const Nav = (props) => {
   let navData = {menu1: 'PRODUCT', menu2: 'WORKS', menu3: 'TEAM', menu4: 'ABOUT'};
   const navChildren = Object.keys(navData)
       .map((key, i) => (<Item style={{borderWidth: 0}} key={i}>
@@ -97,17 +95,21 @@ const Header = (props) => {
   </Row>);
 };
 
-Header.propTypes = {
+Nav.propTypes = {
+  id: PropTypes.string,
   className: PropTypes.string,
+  tab: PropTypes.any,
+  showDropDown: PropTypes.bool,
+  toggle: PropTypes.func,
+  changeTab: PropTypes.func,
 };
 
-Header.defaultProps = {
+Nav.defaultProps = {
   className: 'header0',
 };
 
 // Container
 const mapStateToProps = (state) => {
-  // console.log("state", state);
   return {
     tab: state.nav.tab,
     showDropDown: state.nav.showDropDown,
@@ -125,4 +127,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Nav);

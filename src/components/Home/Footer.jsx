@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import {Row, Col} from 'antd';
 
@@ -43,6 +43,15 @@ const Footer = (props) => {
         </Row>
       </OverPack>
   )
+};
+
+Footer.propTypes = {
+  id: PropTypes.string,
+  className: PropTypes.string,
+};
+
+Footer.defaultProps = {
+  className: 'footer1',
 };
 
 export default Footer;
