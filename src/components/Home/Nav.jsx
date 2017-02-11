@@ -10,8 +10,6 @@ const MenuItemGroup = Menu.ItemGroup;
 const Item = Menu.Item;
 
 const Header = (props) => {
-  console.log("props", props);
-  
   let navData = {menu1: 'PRODUCT', menu2: 'WORKS', menu3: 'TEAM', menu4: 'ABOUT'};
   const navChildren = Object.keys(navData)
       .map((key, i) => (<Item style={{borderWidth: 0}} key={i}>
