@@ -57,7 +57,7 @@ class Banner extends React.Component {
             className={`banner1-title`} key="text"
             style={children.wrapper && children.wrapper.style}
         >
-          <Col xs={{span: 24}} sm={{span: 20, offset: 2}} md={{span: 16, offset: 4}}>
+          <Col xs={{span: 24}} sm={{span: 20, offset: 2}} md={{span: 16, offset: 4}} key="content">
             <p className="title">
               {children.title.children}
             </p>

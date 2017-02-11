@@ -13,7 +13,7 @@ const Header = (props) => {
   let navData = {menu1: 'PRODUCT', menu2: 'WORKS', menu3: 'TEAM', menu4: 'ABOUT'};
   const navChildren = Object.keys(navData)
       .map((key, i) => (<Item style={{borderWidth: 0}} key={i}>
-        <Link key={i} to={`Content${i+1}`} toHash={false}>
+        <Link key={i} to={`Content${i + 1}`} toHash={false}>
           {navData[key]}
         </Link>
       </Item>));
