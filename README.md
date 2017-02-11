@@ -7,7 +7,22 @@ This is a website created base on Macho Studio's test.
 ##Installation Guide
 First, download the repo. Under the root directory of the project, run `npm install` to install npm dependencies. 
 
-Then build the project using `npm run dev`.
+Then build the project using 
+````
+npm run dev
+````
 
 Once the project is build successfully, you can run a local server to host by 
-`firebase serve`. The website can then be visited at [http://localhost:5000](http://localhost:5000) 
+
+````
+firebase serve
+````
+
+The website can then be visited at [http://localhost:5000](http://localhost:5000) 
+
+##Test
+Unit tests have been created using Jest for Redux reducers, they can be run using 
+
+````
+npm run test
+````   
