@@ -69,7 +69,7 @@ const Team = (props) => {
               <iframe
                   className="google-map"
                   frameBorder="0"
-                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDIeri-z8T7XUyNxl6i0jkQVdUlHtNhzY4&q=Vancouver+Public+Library,Vancouver+BC">
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDIeri-z8T7XUyNxl6i0jkQVdUlHtNhzY4&q=Museum+of+Vancouver,Vancouver+BC">
               </iframe>
             </div>
           
