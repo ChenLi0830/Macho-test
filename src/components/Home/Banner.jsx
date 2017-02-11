@@ -52,7 +52,6 @@ class Banner extends React.Component {
             }}>
         </BgElement>
         
-        
         <QueueAnim
             type={['bottom', 'top']} delay={200}
             className={`banner1-title`} key="text"
