@@ -6,10 +6,10 @@ Redux is used for handling state changes in
 may argue it is a overkill for using state in these sections, the main purpose doing so is to show the work flow of 
 Redux in one of the suggested structures for production environment.  
 
-###Demo
-A demo is hosted on AWS S3 at [http://macho.test.s3-website-us-west-2.amazonaws.com/#/](http://macho.test.s3-website-us-west-2.amazonaws.com/#/)
+##Demo
+Visit the demo at [http://macho.test.s3-website-us-west-2.amazonaws.com/#/](http://macho.test.s3-website-us-west-2.amazonaws.com/#/)
 
-###Installation Guide
+##Installation Guide
 First, download the repo. Under the root directory of the project, run `npm install` to 
 install dependencies. 
 
@@ -28,7 +28,7 @@ The website can then be visited at [http://localhost:5000](http://localhost:5000
 for hosting locally for simplicity. If you want, you can also host it however you want.  
  
 
-###Test
+##Test
 Unit tests have been created using Jest for Redux reducers. Run the tests using
 
 ````
