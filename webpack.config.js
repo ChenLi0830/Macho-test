@@ -1,5 +1,7 @@
 'use strict';
 
+// blablabla
+
 let webpack = require('webpack');
 let path = require('path');
 
@@ -35,7 +37,7 @@ let config = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        // 'NODE_ENV': JSON.stringify('production')
+        'NODE_ENV': JSON.stringify('production')
       }
     })
   ],
